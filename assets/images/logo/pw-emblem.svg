@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" role="img" aria-label="PW emblem">
+  <defs>
+    <linearGradient id="m" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset=".5" stop-color="#d5d8de"/><stop offset="1" stop-color="#6b717c"/></linearGradient>
+    <linearGradient id="r" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff1738"/><stop offset="1" stop-color="#7a0818"/></linearGradient>
+  </defs>
+  <path d="M100 8 186 34 178 150Q170 205 100 232 30 205 22 150L14 34Z" fill="#0a0b0f" stroke="url(#m)" stroke-width="5"/>
+  <path d="M100 22 172 44 165 148Q158 192 100 215 42 192 35 148L28 44Z" fill="none" stroke="#ff1738" stroke-width="1.5" opacity=".7"/>
+  <path fill="url(#m)" fill-rule="evenodd" d="M36 70H80Q98 70 98 90 98 110 80 110H54V146H36ZM54 85V96H76Q82 96 82 90.5 82 85 76 85Z"/>
+  <path fill="url(#m)" d="M104 70H121L127 118 134 84H142L149 118 155 70H172L162 146H148L138 108 128 146H114Z"/>
+  <path d="M60 164H140L128 176H72Z" fill="url(#r)"/>
+</svg>
