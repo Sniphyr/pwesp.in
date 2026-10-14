@@ -41,10 +41,10 @@
     nav.appendChild(pin);
   }
 
-  // Active page (Sign Up is the #signup section of login.html)
+  // Active page (Sign Up is register.html)
   function markActive() {
     var page = location.pathname.split("/").pop() || "index.html";
-    var full = page + (location.hash === "#signup" ? "#signup" : "");
+    var full = page;
     var links = document.querySelectorAll(".nav-list a");
     var exact = Array.prototype.some.call(links, function (a) { return a.getAttribute("href") === full; });
     links.forEach(function (a) {

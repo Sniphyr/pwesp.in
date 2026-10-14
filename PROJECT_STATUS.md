@@ -1,5 +1,7 @@
 # Project Status — PHANTOM WARRIOR (singular)
 
+**Latest batch (Batch 1 — Login & Registration):** real Supabase auth UI added: `login.html` (login, forgot password), `register.html`, `reset-password.html`, `assets/css/auth.css`, `assets/js/{supabase-config,auth,auth-forms}.js`, `supabase/setup.sql`, `docs/SUPABASE_SETUP.md`, `HANDOFF.md`. Google sign-in was later removed (email/password only). Needs Supabase project configuration before it works; see HANDOFF.md. No route protection yet.
+
 **Current batch:** Expanding glass sidebar navigation (desktop >=821px: fixed left sidebar, 84px collapsed / 256px expanded on hover, keyboard focus or pin; mobile keeps the top bar + dropdown). Nav-only: `components.css`, `responsive.css`, `navigation.js`, nav markup in all HTML files. Before that: Cinematic background + glass upgrade (shared `pw-background.png` on every page; old painted hero scene, vignette, light-pool washes and opaque bands removed; header, strip, page heads, section heads, about copy, identity rows, footer and mobile menu are now glass). Before that: Visible glass fix v3 (first screen) on top of translucent glassmorphism v2 (materials only, after glass gloss v1) on top of Batch 3 visual upgrade v2 — complete, on top of the earlier visual pass and Batch 2 (theme + responsive). The website as a whole is NOT finished.
 **Next batch:** not yet chosen — see `docs/NEXT_BATCH.md` for suggestions.
 
@@ -7,7 +9,7 @@
 HTML5, CSS3, vanilla JS only. No React, TypeScript, Node, npm, frameworks, or build tools. Must work by opening `index.html`.
 
 ## Brand
-Near-black #050608, charcoal #111318, silver #D5D8DE, crimson #FF1738, electric blue #3BAEFF (sparingly). Tagline: PLAY. FIGHT. WIN. Tokens live in `:root` of `assets/css/style.css`.
+Near-black #050608, charcoal #111318, silver #D5D8DE, crimson #FF1738, electric blue #3BAEFF (sparingly). Tagline: ZERO MERCY. PURE DOMINATION. Tokens live in `:root` of `assets/css/style.css`.
 
 ## Done
 - 1A foundation; 1B homepage; Batch 2 homepage cleanup (Teams/Maps/Plan My Maps removed from nav, Team Preview and statistics removed)

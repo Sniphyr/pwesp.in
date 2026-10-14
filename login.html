@@ -2,14 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Login | PHANTOM WARRIOR</title>
-  <meta name="description" content="PHANTOM WARRIOR — Free Fire esports organization.">
+  <meta name="description" content="Sign in to PHANTOM WARRIOR.">
+  <meta name="color-scheme" content="dark">
   <script>document.documentElement.classList.add("js");try{if(localStorage.getItem("pw-nav-pinned")==="1")document.documentElement.classList.add("nav-pinned")}catch(e){}</script>
   <link rel="preload" as="image" href="assets/images/backgrounds/pw-background.png">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/auth.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="icon" href="assets/images/logo/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/logo/apple-touch-icon.png">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -22,35 +26,96 @@
         <li><a href="about.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 11v6"/><path d="M12 7.6v.01"/></svg><span class="nav-label">About</span></a></li>
         <li><a href="contact.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span class="nav-label">Contact</span></a></li>
         <li><a href="login.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h5a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-5"/><path d="M10 8l4 4-4 4"/><path d="M14 12H4"/></svg><span class="nav-label">Login</span></a></li>
-        <li><a href="login.html#signup"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="10" cy="8" r="4"/><path d="M2.5 20c0-3.8 3.4-6 7.5-6s7.5 2.2 7.5 6"/><path d="M19 8v6"/><path d="M16 11h6"/></svg><span class="nav-label">Sign Up</span></a></li>
+        <li><a href="register.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="10" cy="8" r="4"/><path d="M2.5 20c0-3.8 3.4-6 7.5-6s7.5 2.2 7.5 6"/><path d="M19 8v6"/><path d="M16 11h6"/></svg><span class="nav-label">Sign Up</span></a></li>
       </ul>
     </nav>
   </header>
-  <main id="main">
-    <section class="page-head"><div class="container"><nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">Login</span></nav><h1 class="metal">Login</h1><p>Member access.</p></div></section>
-    <section class="section section-inner"><div class="container notice-grid"><div class="placeholder"><strong>Coming soon.</strong> Login is a placeholder. No authentication exists yet.</div><div class="placeholder" id="signup"><strong>Sign up.</strong> Sign up is a placeholder. No accounts exist yet.</div></div></section>
+  <main id="main" class="auth-main" data-auth="login">
+    <div class="auth-wrap">
+      <div class="auth-status" id="auth-banner" aria-live="polite"></div>
+
+      <section class="auth-card" id="view-login" aria-labelledby="login-title">
+        <div class="auth-head">
+          <img class="auth-logo" src="assets/images/logo/pw-primary-logo.png" alt="" width="68" height="68">
+          <h1 id="login-title" tabindex="-1">WELCOME BACK, WARRIOR</h1>
+          <p class="auth-sub">Sign in to continue your journey.</p>
+        </div>
+        <div class="auth-status" id="login-status" aria-live="polite"></div>
+        <form id="login-form" novalidate>
+          <div class="field">
+          <label for="login-email">Email address<span class="req" aria-hidden="true">*</span></label>
+          <input id="login-email" name="login-email" type="email" autocomplete="email" required aria-describedby="login-email-err" autocapitalize="none" spellcheck="false" inputmode="email">
+          <p class="field-error" id="login-email-err" hidden></p>
+        </div>
+          <div class="field">
+          <label for="login-password">Password<span class="req" aria-hidden="true">*</span></label>
+          <span class="input-wrap"><input id="login-password" name="login-password" type="password" autocomplete="current-password" autocapitalize="none" spellcheck="false" required aria-describedby="login-password-err"><button type="button" class="pw-toggle" data-target="login-password" aria-label="Show password" aria-pressed="false"><svg class="i-show" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><svg class="i-hide" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 3l18 18"/><path d="M10.6 6.1A10.5 10.5 0 0 1 12 6c6.4 0 10 6 10 6a17.6 17.6 0 0 1-3.2 3.9M6.6 7.6A17.7 17.7 0 0 0 2 12s3.6 6 10 6a10 10 0 0 0 4.2-.9"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg></button></span>
+          <p class="field-error" id="login-password-err" hidden></p>
+        </div>
+          <div class="auth-row">
+            <label class="check"><input type="checkbox" id="login-remember" name="remember" checked><span>Remember me</span></label>
+            <a href="#forgot" id="forgot-link">Forgot password?</a>
+          </div>
+          <button class="btn btn-lg auth-submit" type="submit"><span class="btn-label">Sign In</span></button>
+        </form>
+        <p class="auth-alt">New warrior? <a href="register.html" id="create-link">Create an account.</a></p>
+      </section>
+
+      <section class="auth-card" id="view-forgot" aria-labelledby="forgot-title" hidden>
+        <div class="auth-head">
+          <img class="auth-logo" src="assets/images/logo/pw-primary-logo.png" alt="" width="68" height="68">
+          <h1 id="forgot-title" tabindex="-1">RESET YOUR PASSWORD</h1>
+          <p class="auth-sub">Enter your email and we will send you a link to choose a new password.</p>
+        </div>
+        <div class="auth-status" id="forgot-status" aria-live="polite"></div>
+        <form id="forgot-form" novalidate>
+          <div class="field">
+          <label for="forgot-email">Email address<span class="req" aria-hidden="true">*</span></label>
+          <input id="forgot-email" name="forgot-email" type="email" autocomplete="email" required aria-describedby="forgot-email-err" autocapitalize="none" spellcheck="false" inputmode="email">
+          <p class="field-error" id="forgot-email-err" hidden></p>
+        </div>
+          <button class="btn btn-lg auth-submit" type="submit"><span class="btn-label">Send reset link</span></button>
+        </form>
+        <p class="auth-alt"><a href="login.html" id="back-link">Back to sign in</a></p>
+      </section>
+
+      <section class="auth-card auth-center" id="view-session" aria-labelledby="session-title" hidden>
+        <div class="auth-head">
+          <img class="auth-logo" src="assets/images/logo/pw-primary-logo.png" alt="" width="68" height="68">
+          <h1 id="session-title" tabindex="-1">YOU ARE SIGNED IN</h1>
+          <p class="auth-sub">Signed in as <span class="auth-who" id="session-email"></span>.</p>
+        </div>
+        <div class="auth-status" id="session-status" aria-live="polite"></div>
+        <div class="auth-actions">
+          <a class="btn btn-lg" id="session-continue" href="index.html"><span class="btn-label">Continue</span></a>
+          <button type="button" class="btn btn-ghost btn-lg" id="session-signout"><span class="btn-label">Sign out</span></button>
+        </div>
+      </section>
+    </div>
   </main>
   <footer class="site-footer">
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
           <img src="assets/images/logo/pw-primary-logo.png" alt="" width="48" height="48">
-          <br>
-          <p>PHANTOM WARRIOR</p>
-          <p>ZERO MERCY  PURE DOMINATION!</p>
+          <p>PHANTOM WARRIOR. ZERO MERCY. PURE DOMINATION.</p>
         </div>
         <ul class="footer-links"><li><a href="index.html">Home</a></li>
 <li><a href="about.html">About</a></li>
 <li><a href="contact.html">Contact</a></li>
 <li><a href="login.html">Login</a></li>
-<li><a href="login.html#signup">Sign Up</a></li></ul>
+<li><a href="register.html">Sign Up</a></li></ul>
         <div class="footer-social" id="footer-social"><span>Social links coming soon.</span></div>
       </div>
       <div class="footer-bottom">&copy; <span id="year">2026</span> PHANTOM WARRIOR. All rights reserved.</div>
     </div>
   </footer>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="assets/js/config.js"></script>
+  <script src="assets/js/supabase-config.js"></script>
+  <script src="assets/js/auth.js"></script>
   <script src="assets/js/navigation.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/auth-forms.js"></script>
 </body>
 </html>
